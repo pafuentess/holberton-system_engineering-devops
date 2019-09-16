@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -b1 eliza | tr -d '\n' | xargs echo ""
+cut -b1 | tr -d '\n' | xargs echo ""
