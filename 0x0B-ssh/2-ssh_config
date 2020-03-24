@@ -1,0 +1,2 @@
+IdentifyFile ~/.ssh/holberton
+PasswordAuthentication no
