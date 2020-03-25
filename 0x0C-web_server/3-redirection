@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#  Install nginx web server 
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Holberton School" | sudo tee /usr/share/nginx/html/index.html
+sed -i '43i location /redirect_me{\nrewrite ^/(.*)$ https://www.youtube.com/watch?v=QH2-TGUlwu4v permanent;\n}\n' /etc/nginx/sites-available/default
+service nginx start
