@@ -10,5 +10,5 @@ sed -i '43i location /redirect_me{\nrewrite ^/(.*)$ https://www.youtube.com/watc
 sudo echo "Ceci n'est pas une page" > /var/www/html/404.html
 sed -i '46i error_page 404 /404.html;\nlocation = /404.html {\ninternal;\n}\n' /etc/nginx/sites-available/default
 new_string = "48i \\\t\tadd_header  \"X-Served-By\"  \"$HOSTNAME\";"
-sudo sed -i "$new_string" /etc/enginx/sites-available/default
+sudo sed -i "$new_string" /etc/enginx/nginx.conf
 service nginx restart
