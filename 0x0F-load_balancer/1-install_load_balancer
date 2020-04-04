@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#instal proxy
+
+sudo apt-get update
+sudo apt-get -y install haproxy=1.6.\*
+echo -e "frontend haproxynode\n\tbind *:80" >> sudo /etc/haproxy/haproxy.cfg
+echo -e "\tmode http\n\tdefault_backend web-backend" >> sudo /etc/haproxy/haproxy.cfg
+echo -e "backend web-backend\n\tbalance roundrobin" >> sudo /etc/haproxy/haproxy.cfg
+echo -e "\tserver 1075-web-01 35.237.41.190:80 check\n" >> sudo /etc/haproxy/haproxy.cfg
+echo -e "\tserver 1075-web-02 3.90.183.111:80 check\n" >> sudo /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
