@@ -1,4 +1,4 @@
 #!/bin/bash
 # try different users
 
-sudo -u $1 "whoami"
+sudo -u "$1" "whoami"
