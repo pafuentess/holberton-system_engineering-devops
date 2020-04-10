@@ -1,0 +1,4 @@
+#!/bin/bash
+# try different users
+
+sudo -u $1 "whoami"
