@@ -23,7 +23,6 @@ if __name__ == "__main__":
                 task_ok = task.get("completed")
                 value = [task.get("title"), task_ok, name]
                 dicts.append(dict(zip(columns, value)))
-            to_dict.update({"{}".format(ids):dicts})
+            to_dict.update({"{}".format(ids): dicts})
             with open("{}.json".format(ids), 'w') as f:
                 json.dump(to_dict, f)
-                    

@@ -29,4 +29,3 @@ if __name__ == "__main__":
         to_dict.update({user_id: dicts})
     with open("todo_all_employees.json", 'w') as f:
         json.dump(to_dict, f)
-                    
