@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ ... """
 
-
-import requests
-from sys import argv
 import csv
 import json
+import requests
+from sys import argv
+
 
 if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com/todos"
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     columns = ['task', 'completed', 'username']
     to_dict = {}
     for task in answer:
-        user_id = task.get("UserId")
+        user_id = task.get("userId")
         dicts = to_dict.get(user_id)
         if dicts is None:
             dicts = []
