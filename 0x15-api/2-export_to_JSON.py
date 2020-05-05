@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """ ... """
 
-
+import csv
 import requests
 from sys import argv
-import csv
 import json
 
 if __name__ == "__main__":
@@ -15,7 +14,7 @@ if __name__ == "__main__":
             answer = requests.get(url, params=info).json()
             ids = argv[1]
             url = "https://jsonplaceholder.typicode.com/users/{}".format(ids)
-            name = requests.get(url).json().get("name")
+            name = requests.get(url).json().get("username")
             columns = ['id', 'name', 'status', 'title']
             to_dict = {}
             dicts = []
