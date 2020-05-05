@@ -2,9 +2,9 @@
 """ ... """
 
 import csv
+import json
 import requests
 from sys import argv
-import json
 
 if __name__ == "__main__":
     if len(argv) == 2:
@@ -15,7 +15,7 @@ if __name__ == "__main__":
             ids = argv[1]
             url = "https://jsonplaceholder.typicode.com/users/{}".format(ids)
             name = requests.get(url).json().get("username")
-            columns = ['id', 'name', 'status', 'title']
+            columns = ['task', 'completed', 'username']
             to_dict = {}
             dicts = []
             for task in answer:
