@@ -1,10 +1,9 @@
 #!/usr/bin/python3
 """ ... """
 
-
+import csv
 import requests
 from sys import argv
-import csv
 
 if __name__ == "__main__":
     if len(argv) == 2:
@@ -14,7 +13,7 @@ if __name__ == "__main__":
             answer = requests.get(url, params=info).json()
             ids = argv[1]
             url = "https://jsonplaceholder.typicode.com/users/{}".format(ids)
-            name = requests.get(url).json().get("name")
+            name = requests.get(url).json().get("username")
             with open("{}.csv".format(ids), 'w') as f:
                 columns = ['id', 'name', 'status', 'title']
                 fill = csv. DictWriter(f, fieldnames=columns,
